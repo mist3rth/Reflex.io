@@ -95,7 +95,7 @@ export function Nav() {
             <button
               onClick={() => setIsSearchOpen(true)}
               aria-label="Rechercher"
-              className="text-brand-text-muted hover:text-brand-text-primary transition-colors p-1"
+              className="text-brand-text-muted hover:text-brand-text-primary transition-colors p-1 cursor-pointer"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
@@ -178,7 +178,7 @@ export function Nav() {
                 setMobileOpen(false);
                 setIsSearchOpen(true);
               }}
-              className={`font-mono text-xs tracking-[0.2em] uppercase text-brand-text-muted hover:text-brand-accent-red transition-all duration-500 delay-300 flex items-center gap-3 py-4 border-t border-brand-border w-48 justify-center ${
+              className={`font-mono text-xs tracking-[0.2em] uppercase text-brand-text-muted hover:text-brand-accent-red transition-all duration-500 delay-300 flex items-center gap-3 py-4 border-t border-brand-border w-48 justify-center cursor-pointer ${
                 mobileOpen ? "opacity-100" : "opacity-0"
               }`}
             >

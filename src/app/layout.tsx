@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     images: ["/images/og-image.png"],
   },
   icons: {
-    icon: "/Reflex.io/icon.png",
-    shortcut: "/Reflex.io/icon.png",
-    apple: "/Reflex.io/icon.png",
+    icon: "/icon.png?v=2",
+    shortcut: "/icon.png?v=2",
+    apple: "/icon.png?v=2",
   },
   robots: {
     index: true,
@@ -81,6 +81,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${syne.variable} ${ibmPlexSerif.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <link rel="icon" href="/Reflex.io/icon.png?v=2" />
+        <link rel="apple-touch-icon" href="/Reflex.io/icon.png?v=2" />
+      </head>
       <body className="flex flex-col min-h-screen">
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:bg-brand-bg-secondary focus:z-50 focus:outline-none focus:ring-2 focus:ring-brand-accent-red">
           Aller au contenu principal

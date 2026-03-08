@@ -102,7 +102,7 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
     <div className="fixed inset-0 z-[200] flex flex-col bg-brand-bg-primary/95 backdrop-blur-xl transition-all duration-300">
       {/* Header Search */}
       <div className="border-b border-brand-border px-6 py-4 flex items-center gap-4">
-        <Search className="w-5 h-5 text-brand-text-muted" />
+        <Search className="w-5 h-5 text-brand-text-muted cursor-pointer" />
         <input
           ref={inputRef}
           type="text"
