@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Search, X, Loader2 } from "lucide-react";
 import Link from "next/link";
-import { searchArticles } from "@/lib/actions";
+// import { searchArticles } from "@/lib/actions"; -- REMOVED
 import { ArticleMetadata } from "@/lib/types";
 
 interface SearchOverlayProps {
@@ -34,7 +34,25 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
       if (query.trim().length >= 2) {
         setIsLoading(true);
         try {
-          const searchResults = await searchArticles(query);
+          // Utilisation du basePath pour l'API en mode statique
+          const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || '/Reflex.io'}/api/search`);
+          const articles: ArticleMetadata[] = await response.json();
+          
+          const lowerQuery = query.toLowerCase();
+          const searchResults = articles.filter((article) => {
+            const title = article.title || "";
+            const resume = article.resume || "";
+            const rubrique = article.rubrique || "";
+            const tags = Array.isArray(article.tags) ? article.tags : [];
+
+            return (
+              title.toLowerCase().includes(lowerQuery) ||
+              resume.toLowerCase().includes(lowerQuery) ||
+              rubrique.toLowerCase().includes(lowerQuery) ||
+              tags.some((tag) => typeof tag === "string" && tag.toLowerCase().includes(lowerQuery))
+            );
+          }).slice(0, 8);
+
           setResults(searchResults);
         } catch (error) {
           console.error("Search failed:", error);
