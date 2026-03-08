@@ -54,9 +54,9 @@ export const metadata: Metadata = {
     images: ["/images/og-image.png"],
   },
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/Reflex.io/icon.png",
+    shortcut: "/Reflex.io/icon.png",
+    apple: "/Reflex.io/icon.png",
   },
   robots: {
     index: true,
