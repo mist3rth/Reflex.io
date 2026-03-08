@@ -35,6 +35,7 @@ export default async function HistoirePage() {
               fill
               className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2s] ease-out grayscale contrast-125"
               priority
+              sizes="(max-width: 1024px) 100vw, 1400px"
             />
           </div>
           <div className="absolute inset-0 bg-black/40" />

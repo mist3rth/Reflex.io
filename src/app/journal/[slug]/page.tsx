@@ -4,7 +4,6 @@ import { ReadingProgress } from "@/components/layout/ReadingProgress";
 import { Callout, Highlight } from "@/components/article/MdxComponents";
 import { getArticleBySlug, getPossibleSlugs } from "@/lib/articles";
 import { getArticleJsonLd, getBreadcrumbJsonLd } from "@/lib/jsonld";
-import { getAssetPath } from "@/lib/utils";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -23,20 +22,25 @@ export async function generateMetadata({
   if (!article) return {};
 
   const images = [];
-  if (slug === "biais-autorite-blouse-blanche-desarme") images.push(getAssetPath("/images/biais_hero.png"));
-  else if (slug === "journee-ordinaire-consommateur-manipule-biais") images.push(getAssetPath("/images/thomas_hero.png"));
-  else if (slug === "guerre-cognitive-cinq-objectifs") images.push(getAssetPath("/images/guerre_cognitive_hero.png"));
-  else if (slug === "apple-smartphone-addiction-deliberee-manipulation-cognitive") images.push(getAssetPath("/images/apple_hero.png"));
-  else images.push(getAssetPath("/images/featured-article.png"));
+  // Pour les métadonnées, on utilise des chemins relatifs à metadataBase (défini dans layout.tsx)
+  // sans utiliser getAssetPath qui ajouterait un doublon de basePath.
+  if (slug === "biais-autorite-blouse-blanche-desarme") images.push("/images/biais_hero.png");
+  else if (slug === "journee-ordinaire-consommateur-manipule-biais") images.push("/images/thomas_hero.png");
+  else if (slug === "guerre-cognitive-cinq-objectifs") images.push("/images/guerre_cognitive_hero.png");
+  else if (slug === "apple-smartphone-addiction-deliberee-manipulation-cognitive") images.push("/images/apple_hero.png");
+  else images.push("/images/featured-article.png");
 
   const siteUrl = "https://mist3rth.github.io/Reflex.io";
+  const truncatedDescription = article.resume.length > 155 
+    ? article.resume.substring(0, 152) + "..." 
+    : article.resume;
 
   return {
-    title: `${article.title} | Reflexe.io`,
-    description: article.resume,
+    title: article.title, // Le template "%s | Reflexe.io" dans layout.tsx s'occupe du suffixe
+    description: truncatedDescription,
     openGraph: {
       title: article.title,
-      description: article.resume,
+      description: truncatedDescription,
       type: "article",
       url: `${siteUrl}/journal/${slug}`,
       images: images,
@@ -44,7 +48,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: article.title,
-      description: article.resume,
+      description: truncatedDescription,
       images: images,
     },
     alternates: {

@@ -33,6 +33,8 @@ export default function AboutPage() {
               alt="Thierry Thiesson"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
+              priority
+              sizes="(max-width: 768px) 100vw, 340px"
             />
           </div>
 

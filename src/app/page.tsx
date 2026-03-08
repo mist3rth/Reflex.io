@@ -22,6 +22,7 @@ export default function Home() {
             className="object-cover opacity-60 scale-105"
             priority
             sizes="100vw"
+            quality={90}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-bg-primary/20 via-brand-bg-primary/60 to-brand-bg-primary" />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-bg-primary/80 via-transparent to-brand-bg-primary/20" />
@@ -93,7 +94,8 @@ export default function Home() {
                     alt={featuredArticle.title}
                     fill
                     className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 40vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"
+                    priority
                   />
                   {/* Numéro en filigrane */}
                   <span className="absolute top-4 left-6 font-mono font-black text-5xl leading-none text-brand-accent-red z-10">

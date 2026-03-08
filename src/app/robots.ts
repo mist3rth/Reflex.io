@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/_next/", "/static/"],
     },
-    sitemap: "https://reflexe.io/sitemap.xml",
+    sitemap: "https://mist3rth.github.io/Reflex.io/sitemap.xml",
   };
 }
