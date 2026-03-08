@@ -53,6 +53,11 @@ export const metadata: Metadata = {
     description: "Décryptage des biais cognitifs et de leur exploitation par les industries du digital et les ingénieries d'influence.",
     images: ["/images/og-image.png"],
   },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
   robots: {
     index: true,
     follow: true,
@@ -65,7 +70,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://reflexe.io",
+    canonical: "https://mist3rth.github.io/Reflex.io",
   },
 };
 
