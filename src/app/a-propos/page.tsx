@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "À propos | Reflexe.io",
@@ -28,7 +29,7 @@ export default function AboutPage() {
           {/* Portrait */}
           <div className="relative aspect-[3/4] max-w-[340px] bg-brand-bg-secondary border border-brand-border overflow-hidden mb-6 group">
             <Image
-              src="/images/author.webp"
+              src={getAssetPath("/images/author.webp")}
               alt="Thierry Thiesson"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"

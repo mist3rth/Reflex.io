@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { getBreadcrumbJsonLd } from '@/lib/jsonld';
+import { getAssetPath } from '@/lib/utils';
 
 interface BiasData {
   title: string;
@@ -53,7 +54,7 @@ export default function BiaisPage() {
         <div className="relative w-full aspect-[21/9] md:aspect-video min-h-[250px] md:min-h-[400px] max-h-[700px] mb-8 md:mb-16 overflow-hidden border border-brand-border group flex items-center justify-center">
           <div className="absolute inset-0 bg-brand-bg-secondary">
              <Image 
-              src="/images/biais_hero.png"
+              src={getAssetPath("/images/biais_hero.png")}
               alt="Architecture des biais cognitifs"
               fill
               className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2s] ease-out grayscale contrast-125"

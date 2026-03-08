@@ -4,6 +4,7 @@ import { ReadingProgress } from "@/components/layout/ReadingProgress";
 import { Callout, Highlight } from "@/components/article/MdxComponents";
 import { getArticleBySlug, getPossibleSlugs } from "@/lib/articles";
 import { getArticleJsonLd, getBreadcrumbJsonLd } from "@/lib/jsonld";
+import { getAssetPath } from "@/lib/utils";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -22,11 +23,13 @@ export async function generateMetadata({
   if (!article) return {};
 
   const images = [];
-  if (slug === "biais-autorite-blouse-blanche-desarme") images.push("/images/biais_hero.png");
-  else if (slug === "journee-ordinaire-consommateur-manipule-biais") images.push("/images/thomas_hero.png");
-  else if (slug === "guerre-cognitive-cinq-objectifs") images.push("/images/guerre_cognitive_hero.png");
-  else if (slug === "apple-smartphone-addiction-deliberee-manipulation-cognitive") images.push("/images/apple_hero.png");
-  else images.push("/images/featured-article.png");
+  if (slug === "biais-autorite-blouse-blanche-desarme") images.push(getAssetPath("/images/biais_hero.png"));
+  else if (slug === "journee-ordinaire-consommateur-manipule-biais") images.push(getAssetPath("/images/thomas_hero.png"));
+  else if (slug === "guerre-cognitive-cinq-objectifs") images.push(getAssetPath("/images/guerre_cognitive_hero.png"));
+  else if (slug === "apple-smartphone-addiction-deliberee-manipulation-cognitive") images.push(getAssetPath("/images/apple_hero.png"));
+  else images.push(getAssetPath("/images/featured-article.png"));
+
+  const siteUrl = "https://mist3rth.github.io/Reflex.io";
 
   return {
     title: `${article.title} | Reflexe.io`,
@@ -35,7 +38,7 @@ export async function generateMetadata({
       title: article.title,
       description: article.resume,
       type: "article",
-      url: `https://reflexe.io/journal/${slug}`,
+      url: `${siteUrl}/journal/${slug}`,
       images: images,
     },
     twitter: {
@@ -45,7 +48,7 @@ export async function generateMetadata({
       images: images,
     },
     alternates: {
-      canonical: `https://reflexe.io/journal/${slug}`,
+      canonical: `${siteUrl}/journal/${slug}`,
     },
   };
 }

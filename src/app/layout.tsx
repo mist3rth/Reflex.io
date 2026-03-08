@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://reflexe.io"),
+  metadataBase: new URL("https://mist3rth.github.io/Reflex.io"),
   title: {
     default: "Reflexe.io | Le journal des mécanismes d'influence",
     template: "%s | Reflexe.io",
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://reflexe.io",
+    url: "https://mist3rth.github.io/Reflex.io",
     siteName: "Reflexe.io",
     title: "Reflexe.io | Le journal des mécanismes d'influence",
     description: "Décryptage des biais cognitifs et de leur exploitation par les industries du digital et les ingénieries d'influence.",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/og-image.png", // Next.js metadataBase will prefix this with https://mist3rth.github.io/Reflex.io
         width: 1200,
         height: 630,
         alt: "Reflexe.io - Architecture des biais et du contrôle",

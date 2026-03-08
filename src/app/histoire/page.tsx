@@ -4,6 +4,7 @@ import { Callout, Highlight, Heading2 as h2, Heading3 as h3 } from "@/components
 import { ReadingProgress } from "@/components/layout/ReadingProgress";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 
 export const metadata = {
   title: "Histoire de la Manipulation | Reflexe.io",
@@ -29,7 +30,7 @@ export default async function HistoirePage() {
         <div className="relative w-full aspect-[21/9] md:aspect-video min-h-[250px] md:min-h-[400px] max-h-[700px] mb-8 md:mb-16 overflow-hidden border border-brand-border group flex items-center justify-center">
           <div className="absolute inset-0 bg-brand-bg-secondary">
             <Image 
-              src="/images/heritage/hero.png"
+              src={getAssetPath("/images/heritage/hero.png")}
               alt={article.title}
               fill
               className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2s] ease-out grayscale contrast-125"

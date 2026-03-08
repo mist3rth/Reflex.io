@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllArticles } from "@/lib/articles";
 import DataLog from "@/components/home/DataLog";
+import { getAssetPath } from "@/lib/utils";
 
 export default function Home() {
   const articles = getAllArticles().filter((a) => a.status === "published" && a.slug !== "biais-cognitifs");
@@ -15,7 +16,7 @@ export default function Home() {
         {/* Image de fond avec overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-bg.png"
+            src={getAssetPath("/images/hero-bg.png")}
             alt="Abstrait technologique"
             fill
             className="object-cover opacity-60 scale-105"
@@ -78,7 +79,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr]">
                 <div className="relative min-h-[280px] md:min-h-[380px] bg-brand-bg-secondary flex items-end p-6 overflow-hidden">
                   <Image
-                    src={
+                    src={getAssetPath(
                       featuredArticle.slug === "guerre-cognitive-cinq-objectifs" 
                         ? "/images/guerre_cognitive_hero.png" 
                         : featuredArticle.slug === "biais-autorite-blouse-blanche-desarme" 
@@ -88,7 +89,7 @@ export default function Home() {
                             : featuredArticle.slug === "apple-smartphone-addiction-deliberee-manipulation-cognitive"
                               ? "/images/apple_hero.png"
                               : "/images/featured-article.png"
-                    }
+                    )}
                     alt={featuredArticle.title}
                     fill
                     className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
