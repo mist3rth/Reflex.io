@@ -1,0 +1,21 @@
+# Reflexe.io
+> Le journal des mécanismes d'influence digital et des biais cognitifs.
+
+## Overview
+Reflexe.io est une plateforme d'analyse dédiée à l'architecture des biais cognitifs et du contrôle dans l'industrie du digital. Le projet documente comment les interfaces et les algorithmes exploitent les raccourcis de traitement du cerveau humain.
+
+## Key Sections
+- [/journal](/journal) : Analyses détaillées de cas réels et de mécanismes contemporains.
+- [/biais](/biais) : Encyclopédie des biais cognitifs documentés.
+- [/histoire](/histoire) : L'évolution des doctrines d'influence.
+
+## Current Articles
+- [7h-23h : Une journée ordinaire](/journal/journee-ordinaire-consommateur-manipule-biais)
+- [Le biais d'autorité](/journal/biais-autorite-blouse-blanche-desarme)
+- [GAFAM : Infrastructure publicitaire](/journal/gafam-infrastructure-publicitaire-guerre-cognitive)
+- [Contrôle réflexif](/journal/controle-reflexif-doctrine-sovietique-algorithmes)
+- [IA comme bouclier cognitif](/journal/ia-bouclier-cognitif-detection-desinformation)
+- [Guerre cognitive](/journal/guerre-cognitive-cinq-objectifs)
+
+## Technology
+Next.js, Tailwind CSS, MDX.
