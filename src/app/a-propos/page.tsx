@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import { getAssetPath } from "@/lib/utils";
 
@@ -77,61 +76,81 @@ export default function AboutPage() {
         </div>
 
         {/* Colonne droite : Texte avec sections numérotées */}
-        <div className="space-y-14">
-          {/* 01 Mon Parcours */}
+        <div className="space-y-16">
+          {/* 01 QUI */}
           <section>
             <div className="flex items-center gap-4 mb-5">
               <span className="font-mono font-black text-[10px] text-brand-accent-red">01.</span>
-              <h2 className="font-display font-black text-sm uppercase tracking-widest text-brand-accent-red">MON PARCOURS</h2>
+              <h2 className="font-display font-black text-sm uppercase tracking-widest text-brand-accent-red">QUI</h2>
             </div>
-            <p className="text-brand-text-secondary text-sm leading-relaxed mb-4">
-              Passionné par l&apos;intersection entre la technologie et la pensée critique, Thierry Thiesson a forgé son expertise à travers des décennies d&apos;exploration digitale. Son parcours est jalonné de défis relevés pour rendre le complexe accessible.
-            </p>
-            <p className="text-brand-text-secondary text-sm leading-relaxed">
-              Des premières lignes de BBS aux architectures cloud contemporaines, il a observé les cycles d&apos;innovation non pas comme des successions d&apos;outils, mais comme des évolutions de notre rapport au savoir. Son expérience en tant qu&apos;architecte de systèmes d&apos;information lui permet aujourd&apos;hui d&apos;offrir un regard à la fois technique et philosophique sur notre futur numérique.
-            </p>
+            <div className="space-y-4 text-brand-text-secondary text-sm leading-relaxed">
+              <p>
+                <strong className="text-brand-text-primary">Thierry Thiesson. 30 ans dans le digital. Pas un observateur, un praticien.</strong>
+              </p>
+              <p>
+                Des premiers BBS aux architectures IA contemporaines, j&apos;ai traversé chaque cycle technologique majeur de l&apos;intérieur. Pas comme analyste. Comme acteur.
+              </p>
+              <p>
+                Formé en autonomie au MIT sur l&apos;IA appliquée aux organisations, j&apos;ai construit une lecture transversale rare : technique, économique, géopolitique, cognitive. Pas pour couvrir tous les sujets. Pour comprendre comment ils s&apos;imbriquent.
+              </p>
+              <p>
+                Reflexe.io est né de cette conviction : les mécaniques qui façonnent nos sociétés ne se lisent pas dans une seule discipline.
+              </p>
+            </div>
           </section>
 
-          {/* 02 Le Positionnement */}
+          {/* 02 CE QUE JE FAIS */}
           <section>
             <div className="flex items-center gap-4 mb-5">
               <span className="font-mono font-black text-[10px] text-brand-accent-red">02.</span>
-              <h2 className="font-display font-black text-sm uppercase tracking-widest text-brand-accent-red">LE POSITIONNEMENT</h2>
+              <h2 className="font-display font-black text-sm uppercase tracking-widest text-brand-accent-red">CE QUE JE FAIS</h2>
             </div>
-            <p className="text-brand-text-secondary text-sm leading-relaxed mb-4">
-              <Link href="/" className="text-brand-accent-red hover:underline underline-offset-2">Reflexe.io</Link> n&apos;est pas un média de plus sur l&apos;actualité tech. C&apos;est un laboratoire d&apos;analyse. Nous ne nous contentons pas de rapporter ce qui se passe ; nous cherchons à comprendre pourquoi cela se produit et quelles en sont les ramifications profondes sur notre société.
-            </p>
-            <p className="text-brand-text-secondary text-sm leading-relaxed">
-              Dans un monde saturé d&apos;informations éphémères, nous privilégions le &ldquo;temps long&rdquo;. Chaque article, chaque analyse est le fruit d&apos;une réflexion mûrie, visant à donner à nos lecteurs les clés d&apos;une autonomie de pensée face aux algorithmes.
-            </p>
+            <div className="space-y-4 text-brand-text-secondary text-sm leading-relaxed">
+              <p>
+                <strong className="text-brand-text-primary">Prospective &amp; Conseil.</strong>
+              </p>
+              <p>
+                J&apos;aide des organisations à lire les signaux faibles avant qu&apos;ils deviennent des chocs. À comprendre les dynamiques d&apos;influence cognitive qui reconfigurent leurs marchés, leurs équipes, leurs décisions.
+              </p>
+              <p>
+                Pas de slides génériques. Pas de frameworks recyclés.<br />
+                Une lecture construite sur 30 ans d&apos;exposition directe aux cycles d&apos;innovation.
+              </p>
+            </div>
           </section>
 
-          {/* 03 Pourquoi ce Projet */}
+          {/* 03 POURQUOI REFLEXE.IO */}
           <section>
             <div className="flex items-center gap-4 mb-5">
               <span className="font-mono font-black text-[10px] text-brand-accent-red">03.</span>
-              <h2 className="font-display font-black text-sm uppercase tracking-widest text-brand-accent-red">POURQUOI CE PROJET ?</h2>
+              <h2 className="font-display font-black text-sm uppercase tracking-widest text-brand-accent-red">POURQUOI REFLEXE.IO</h2>
             </div>
-            <p className="text-brand-text-secondary text-sm leading-relaxed">
-              Ce projet est né d&apos;un constat simple : la technique est devenue trop importante pour être laissée aux seuls techniciens. Il y a un besoin vital de médiation culturelle. Reflexe.io se veut ce pont, ce &ldquo;réflexe&rdquo; nécessaire avant d&apos;adopter ou de rejeter une innovation.
-            </p>
-          </section>
+            <div className="space-y-4 text-brand-text-secondary text-sm leading-relaxed">
+              <p>
+                Parce que la technique est devenue trop importante pour être laissée aux seuls techniciens.<br />
+                Et la prospective trop sérieuse pour être laissée aux seuls futurologues.
+              </p>
+              <p>
+                Chaque article publié ici est une démonstration de méthode : croiser le temps long de l&apos;histoire, la rigueur des données, et l&apos;angle cognitif que la plupart des analyses ignorent.
+              </p>
+              
+              <div className="border border-brand-accent-red/30 p-6 bg-brand-bg-card mt-8">
+                <h3 className="font-display font-black text-xs uppercase tracking-widest text-brand-text-primary mb-2">INDÉPENDANCE TOTALE</h3>
+                <p className="text-brand-text-secondary text-xs leading-relaxed">
+                  Aucun annonceur. Aucune affiliation.
+                </p>
+              </div>
 
-          {/* Engagement / Vision */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="border border-brand-border p-6 bg-brand-bg-card">
-              <h3 className="font-display font-black text-xs uppercase tracking-widest text-brand-text-muted mb-3">ENGAGEMENT</h3>
-              <p className="text-brand-text-secondary text-xs leading-relaxed">
-                Une indépendance totale vis-à-vis des annonceurs et des géants du secteur.
-              </p>
+              <div className="mt-8 pt-8 border-t border-brand-border">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-brand-text-muted mb-3">
+                  → Vous souhaitez travailler ensemble ?
+                </p>
+                <a href="mailto:mist3rth@gmail.com" className="font-display font-black text-xl text-brand-text-primary hover:text-brand-accent-red transition-colors">
+                  mist3rth@gmail.com
+                </a>
+              </div>
             </div>
-            <div className="border border-brand-border p-6 bg-brand-bg-card">
-              <h3 className="font-display font-black text-xs uppercase tracking-widest text-brand-text-muted mb-3">VISION</h3>
-              <p className="text-brand-text-secondary text-xs leading-relaxed">
-                Contribuer à une technologie plus humaine, plus éthique et plus transparente.
-              </p>
-            </div>
-          </div>
+          </section>
         </div>
       </div>
     </div>

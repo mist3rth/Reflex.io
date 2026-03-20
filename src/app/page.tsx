@@ -81,15 +81,17 @@ export default function Home() {
                 <div className="relative min-h-[280px] md:min-h-[380px] bg-brand-bg-secondary flex items-end p-6 overflow-hidden">
                   <Image
                     src={getAssetPath(
-                      featuredArticle.slug === "guerre-cognitive-cinq-objectifs" 
-                        ? "/images/guerre_cognitive_hero.png" 
-                        : featuredArticle.slug === "biais-autorite-blouse-blanche-desarme" 
-                          ? "/images/biais_hero.png" 
-                          : featuredArticle.slug === "journee-ordinaire-consommateur-manipule-biais"
-                            ? "/images/thomas_hero.png"
-                            : featuredArticle.slug === "apple-smartphone-addiction-deliberee-manipulation-cognitive"
-                              ? "/images/apple_hero.png"
-                              : "/images/featured-article.png"
+                      featuredArticle.slug === "tiktok-continuite-conditionnement-pavlov-algorithme"
+                        ? "/images/tiktok_hero.png"
+                        : featuredArticle.slug === "guerre-cognitive-cinq-objectifs" 
+                          ? "/images/guerre_cognitive_hero.png" 
+                          : featuredArticle.slug === "biais-autorite-blouse-blanche-desarme" 
+                            ? "/images/biais_hero.png" 
+                            : featuredArticle.slug === "journee-ordinaire-consommateur-manipule-biais"
+                              ? "/images/thomas_hero.png"
+                              : featuredArticle.slug === "apple-smartphone-addiction-deliberee-manipulation-cognitive"
+                                ? "/images/apple_hero.png"
+                                : "/images/featured-article.png"
                     )}
                     alt={featuredArticle.title}
                     fill
