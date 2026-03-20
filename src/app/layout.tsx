@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Syne, IBM_Plex_Serif, JetBrains_Mono } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollTop } from "@/components/layout/ScrollTop";
@@ -99,6 +100,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <ScrollTop />
+        <GoogleAnalytics gaId="G-WJQYNN90FP" />
       </body>
     </html>
   );
