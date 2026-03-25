@@ -1,7 +1,18 @@
 import React from 'react';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { getBreadcrumbJsonLd } from '@/lib/jsonld';
 import { getAssetPath } from '@/lib/utils';
+
+export const metadata: Metadata = {
+  title: "Architecture des Biais Cognitifs | Reflexe.io",
+  description: "Anatomie des réflexes et des raccourcis de traitement : découvrez les mécanismes d'influence exploités par les industries du digital.",
+  openGraph: {
+    title: "Architecture des Biais Cognitifs | Reflexe.io",
+    description: "Comment nos raccourcis de traitement deviennent des surfaces d'attaque.",
+    images: ["/images/biais_hero.png"],
+  }
+};
 
 interface BiasData {
   title: string;

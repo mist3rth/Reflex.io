@@ -10,6 +10,7 @@ export interface ArticleMetadata {
   tags: string[];
   status: 'draft' | 'published';
   articleNumber: string;
+  coverImage?: string;
   // Généré dynamiquement :
   readingTime?: number;
 }

@@ -4,7 +4,12 @@ import { getAssetPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "À propos | Reflexe.io",
-  description: "La voix derrière Reflexe.io : Thierry Thiesson.",
+  description: "La voix derrière Reflexe.io : Thierry Thiesson. 30 ans d'expertise dans le digital et les architectures de la pensée.",
+  openGraph: {
+    title: "Thierry Thiesson | À propos de Reflexe.io",
+    description: "Prospective, conseil et analyse des architectures de la pensée.",
+    images: ["/images/author.webp"],
+  }
 };
 
 export default function AboutPage() {

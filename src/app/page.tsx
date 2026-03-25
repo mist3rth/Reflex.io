@@ -80,20 +80,8 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr]">
                 <div className="relative min-h-[280px] md:min-h-[380px] bg-brand-bg-secondary flex items-end p-6 overflow-hidden">
                   <Image
-                    src={getAssetPath(
-                      featuredArticle.slug === "tiktok-continuite-conditionnement-pavlov-algorithme"
-                        ? "/images/tiktok_hero.png"
-                        : featuredArticle.slug === "guerre-cognitive-cinq-objectifs" 
-                          ? "/images/guerre_cognitive_hero.png" 
-                          : featuredArticle.slug === "biais-autorite-blouse-blanche-desarme" 
-                            ? "/images/biais_hero.png" 
-                            : featuredArticle.slug === "journee-ordinaire-consommateur-manipule-biais"
-                              ? "/images/thomas_hero.png"
-                              : featuredArticle.slug === "apple-smartphone-addiction-deliberee-manipulation-cognitive"
-                                ? "/images/apple_hero.png"
-                                : "/images/featured-article.png"
-                    )}
-                    alt={featuredArticle.title}
+                    src={getAssetPath(featuredArticle.coverImage || "/images/featured-article.png")}
+                    alt=""
                     fill
                     className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 500px"

@@ -71,3 +71,21 @@ export function getAllArticles(): Article[] {
 
   return articles;
 }
+
+export function getNextArticle(currentSlug: string): Article | null {
+  const articles = getAllArticles();
+  const currentIndex = articles.findIndex((a) => a.slug === currentSlug);
+  
+  if (currentIndex === -1) return null;
+  
+  // L'article "suivant" pour l'utilisateur est l'article chronologiquement précédent (plus ancien)
+  // car nous trions par date décroissante (plus récent d'abord).
+  // Si on est sur le dernier (le plus ancien), on renvoie null ou on boucle sur le premier (plus récent).
+  // On va boucler sur le premier pour maintenir l'engagement.
+  
+  if (currentIndex === articles.length - 1) {
+    return articles[0]; // Boucle sur le plus récent
+  }
+  
+  return articles[currentIndex + 1];
+}

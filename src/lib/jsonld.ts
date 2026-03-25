@@ -1,26 +1,30 @@
 import { ArticleMetadata } from "./types";
 
+const BASE_URL = "https://mist3rth.github.io/Reflex.io";
+
 export function getWebSiteJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Reflexe.io",
-    "url": "https://reflexe.io",
+    "url": BASE_URL,
     "description": "Décryptage des biais cognitifs et de leur exploitation par les industries du digital.",
     "publisher": {
       "@type": "Organization",
       "name": "Reflexe.io",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://reflexe.io/images/logo.png"
+        "url": `${BASE_URL}/icon.png`
       }
     }
   };
 }
 
 export function getArticleJsonLd(article: ArticleMetadata) {
-  const url = `https://reflexe.io/journal/${article.slug}`;
-  const imageUrl = `https://reflexe.io/images/${article.slug}_hero.png`;
+  const url = `${BASE_URL}/journal/${article.slug}`;
+  const imageUrl = article.coverImage 
+    ? (article.coverImage.startsWith('http') ? article.coverImage : `${BASE_URL}${article.coverImage}`)
+    : `${BASE_URL}/images/featured-article.png`;
 
   return {
     "@context": "https://schema.org",
@@ -44,7 +48,7 @@ export function getArticleJsonLd(article: ArticleMetadata) {
       "name": "Reflexe.io",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://reflexe.io/images/logo.png"
+        "url": `${BASE_URL}/icon.png`
       }
     }
   };
@@ -58,7 +62,7 @@ export function getBreadcrumbJsonLd(items: { name: string; item: string }[]) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": item.item.startsWith("http") ? item.item : `https://reflexe.io${item.item}`
+      "item": item.item.startsWith("http") ? item.item : `${BASE_URL}${item.item}`
     }))
   };
 }
