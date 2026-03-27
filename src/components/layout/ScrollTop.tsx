@@ -31,7 +31,7 @@ export function ScrollTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 z-[90] md:flex items-center justify-center w-12 h-12 bg-brand-bg-card border border-brand-border text-brand-text-primary hover:text-brand-accent-red hover:border-brand-accent-red transition-all duration-300 shadow-2xl group hidden ${
+      className={`fixed bottom-8 right-8 z-[90] md:flex items-center justify-center w-12 h-12 bg-brand-bg-card border border-brand-border text-brand-text-primary hover:text-brand-accent-red hover:border-brand-accent-red transition-all duration-300 shadow-2xl group cursor-pointer hidden ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
       }`}
       aria-label="Retour en haut"

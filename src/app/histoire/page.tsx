@@ -5,10 +5,14 @@ import { ReadingProgress } from "@/components/layout/ReadingProgress";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getAssetPath } from "@/lib/utils";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Histoire de la Manipulation | Reflexe.io",
   description: "De Pavlov aux algorithmes : l'histoire secrète de la manipulation cognitive.",
+  alternates: {
+    canonical: "https://mist3rth.github.io/Reflex.io/histoire/",
+  },
 };
 
 const components = { Callout, Highlight, h2, h3 };
@@ -30,7 +34,7 @@ export default async function HistoirePage() {
         <div className="relative w-full aspect-[21/9] md:aspect-video min-h-[250px] md:min-h-[400px] max-h-[700px] mb-8 md:mb-16 overflow-hidden border border-brand-border group flex items-center justify-center">
           <div className="absolute inset-0 bg-brand-bg-secondary">
             <Image 
-              src={getAssetPath("/images/heritage/hero.png")}
+              src={getAssetPath("/images/heritage/hero.webp")}
               alt={article.title}
               fill
               className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2s] ease-out grayscale contrast-125"

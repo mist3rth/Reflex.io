@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: "Décryptage des biais cognitifs et de leur exploitation par les industries du digital et les ingénieries d'influence.",
     images: [
       {
-        url: "/images/og-image.png", // Next.js metadataBase will prefix this with https://mist3rth.github.io/Reflex.io
+        url: "/images/og-image.webp", // Next.js metadataBase will prefix this with https://mist3rth.github.io/Reflex.io
         width: 1200,
         height: 630,
         alt: "Reflexe.io - Architecture des biais et du contrôle",
@@ -50,14 +50,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reflexe.io | Le journal des mécanismes d'influence",
-    description: "Décryptage des biais cognitifs et de leur exploitation par les industries du digital et les ingénieries d'influence.",
-    images: ["/images/og-image.png"],
+    title: "Reflexe.io | Thierry Thiesson",
+    description: "Analyse des mécanismes de manipulation cognitive et des biais dans l'écosystème numérique.",
+    images: ["/images/og-image.webp"],
   },
   icons: {
-    icon: "/Reflex.io/icon.png?v=2",
-    shortcut: "/Reflex.io/icon.png?v=2",
-    apple: "/Reflex.io/icon.png?v=2",
+    icon: "/Reflex.io/icon.webp?v=2",
+    shortcut: "/Reflex.io/icon.webp?v=2",
+    apple: "/Reflex.io/icon.webp?v=2",
   },
   robots: {
     index: true,
@@ -69,9 +69,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  alternates: {
-    canonical: "https://mist3rth.github.io/Reflex.io",
   },
 };
 

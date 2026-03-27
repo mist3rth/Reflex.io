@@ -3,6 +3,13 @@ import Image from "next/image";
 import { getAllArticles } from "@/lib/articles";
 import DataLog from "@/components/home/DataLog";
 import { getAssetPath } from "@/lib/utils";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "https://mist3rth.github.io/Reflex.io/",
+  },
+};
 
 export default function Home() {
   const articles = getAllArticles().filter((a) => a.status === "published" && a.slug !== "biais-cognitifs");
@@ -16,10 +23,10 @@ export default function Home() {
         {/* Image de fond avec overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src={getAssetPath("/images/hero-bg.png")}
-            alt="Abstrait technologique"
+            src={getAssetPath("/images/hero-bg.webp")}
+            alt="Manipulation Cognitive"
             fill
-            className="object-cover opacity-60 scale-105"
+            className="object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-1000"
             priority
             sizes="100vw"
             quality={90}

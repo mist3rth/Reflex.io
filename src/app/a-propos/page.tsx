@@ -9,7 +9,10 @@ export const metadata: Metadata = {
     title: "Thierry Thiesson | À propos de Reflexe.io",
     description: "Prospective, conseil et analyse des architectures de la pensée.",
     images: ["/images/author.webp"],
-  }
+  },
+  alternates: {
+    canonical: "https://mist3rth.github.io/Reflex.io/a-propos/",
+  },
 };
 
 export default function AboutPage() {

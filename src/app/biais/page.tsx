@@ -11,7 +11,10 @@ export const metadata: Metadata = {
     title: "Architecture des Biais Cognitifs | Reflexe.io",
     description: "Comment nos raccourcis de traitement deviennent des surfaces d'attaque.",
     images: ["/images/biais_hero.png"],
-  }
+  },
+  alternates: {
+    canonical: "https://mist3rth.github.io/Reflex.io/biais/",
+  },
 };
 
 interface BiasData {
@@ -65,7 +68,7 @@ export default function BiaisPage() {
         <div className="relative w-full aspect-[21/9] md:aspect-video min-h-[250px] md:min-h-[400px] max-h-[700px] mb-8 md:mb-16 overflow-hidden border border-brand-border group flex items-center justify-center">
           <div className="absolute inset-0 bg-brand-bg-secondary">
              <Image 
-              src={getAssetPath("/images/biais_hero.png")}
+              src={getAssetPath("/images/biais_hero.webp")}
               alt="Architecture des biais cognitifs"
               fill
               className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-[2s] ease-out grayscale contrast-125"

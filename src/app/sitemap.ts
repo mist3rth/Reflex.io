@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const articles = getAllArticles().filter((a) => a.status === "published");
 
   const articleUrls = articles.map((article) => ({
-    url: `${baseUrl}/journal/${article.slug}`,
+    url: `${baseUrl}/journal/${article.slug}/`,
     lastModified: new Date(article.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -16,31 +16,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticUrls = [
     {
-      url: baseUrl,
+      url: `${baseUrl}/`,
       lastModified: new Date(),
       changeFrequency: "daily" as const,
       priority: 1,
     },
     {
-      url: `${baseUrl}/journal`,
+      url: `${baseUrl}/journal/`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/biais`,
+      url: `${baseUrl}/biais/`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/histoire`,
+      url: `${baseUrl}/histoire/`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/a-propos`,
+      url: `${baseUrl}/a-propos/`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.4,

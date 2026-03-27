@@ -24,7 +24,7 @@ export function getArticleJsonLd(article: ArticleMetadata) {
   const url = `${BASE_URL}/journal/${article.slug}`;
   const imageUrl = article.coverImage 
     ? (article.coverImage.startsWith('http') ? article.coverImage : `${BASE_URL}${article.coverImage}`)
-    : `${BASE_URL}/images/featured-article.png`;
+    : `${BASE_URL}/images/featured-article.webp`;
 
   return {
     "@context": "https://schema.org",

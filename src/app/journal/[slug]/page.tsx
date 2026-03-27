@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!article) return {};
 
   const siteUrl = "https://mist3rth.github.io/Reflex.io";
-  const ogImage = article.coverImage || "/images/featured-article.png";
+  const ogImage = article.coverImage || "/images/featured-article.webp";
   
   const truncatedDescription = article.resume.length > 155 
     ? article.resume.substring(0, 152) + "..." 
@@ -37,7 +37,7 @@ export async function generateMetadata({
       title: article.title,
       description: truncatedDescription,
       type: "article",
-      url: `${siteUrl}/journal/${slug}`,
+      url: `${siteUrl}/journal/${slug}/`,
       images: [
         {
           url: ogImage,
@@ -54,7 +54,7 @@ export async function generateMetadata({
       images: [ogImage],
     },
     alternates: {
-      canonical: `${siteUrl}/journal/${slug}`,
+      canonical: `${siteUrl}/journal/${slug}/`,
     },
   };
 }
@@ -148,6 +148,31 @@ export default async function ArticlePage({
           <MDXRemote source={article.content} components={components} />
         </div>
 
+        {/* Partage social - juste après le contenu */}
+        <div className="mt-12 pt-8 border-t border-brand-border/30">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-brand-text-muted mb-3">Partager l&apos;article</p>
+          <div className="flex items-center gap-6">
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=https://mist3rth.github.io/Reflex.io/journal/${slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-text-muted hover:text-[#1877F2] transition-colors font-mono text-xs font-bold tracking-widest"
+              aria-label="Partager sur Facebook (s'ouvre dans un nouvel onglet)"
+            >
+              Facebook
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=https://mist3rth.github.io/Reflex.io/journal/${slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-text-muted hover:text-[#0077b5] transition-colors font-mono text-xs font-bold tracking-widest"
+              aria-label="Partager sur LinkedIn (s'ouvre dans un nouvel onglet)"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
         {/* JSON-LD SEO */}
         <script
           type="application/ld+json"
@@ -167,55 +192,23 @@ export default async function ArticlePage({
         />
       </article>
 
-      {/* Article suivant / auteur */}
-      <div className="border-t border-brand-border bg-brand-bg-secondary">
-        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-
-          <div>
-            <p className="font-mono text-[10px] uppercase tracking-widest text-brand-text-muted mb-2">PARTAGER L&apos;ARTICLE</p>
-            <div className="flex items-center gap-6">
-               <a 
-                 href={`https://www.facebook.com/sharer/sharer.php?u=https://mist3rth.github.io/Reflex.io/journal/${slug}`}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="text-brand-text-muted hover:text-[#1877F2] transition-colors font-mono text-xs font-bold tracking-widest"
-                 aria-label="Partager sur Facebook (s'ouvre dans un nouvel onglet)"
-               >
-                 FACEBOOK
-               </a>
-               <a 
-                 href={`https://www.linkedin.com/sharing/share-offsite/?url=https://mist3rth.github.io/Reflex.io/journal/${slug}`}
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="text-brand-text-muted hover:text-[#0077b5] transition-colors font-mono text-xs font-bold tracking-widest"
-                 aria-label="Partager sur LinkedIn (s'ouvre dans un nouvel onglet)"
-               >
-                 LINKEDIN
-               </a>
-            </div>
+      {/* Article suivant */}
+      {nextArticle && (
+        <div className="border-t border-brand-border bg-brand-bg-secondary">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-10">
+            <p className="font-mono text-[10px] uppercase tracking-widest text-brand-text-muted mb-4">Lire la suite</p>
+            <Link
+              href={`/journal/${nextArticle.slug}`}
+              className="group flex items-start gap-4 hover:text-brand-accent-red transition-colors"
+            >
+              <span className="text-brand-accent-red font-mono text-sm mt-1">→</span>
+              <h4 className="font-display font-black text-xl md:text-2xl uppercase text-brand-text-primary leading-tight tracking-tighter group-hover:text-brand-accent-red transition-colors">
+                {nextArticle.title}
+              </h4>
+            </Link>
           </div>
-
-          {/* Article suivant - Design immersif */}
-          {nextArticle && (
-            <div className="w-full md:w-1/2 mt-12 md:mt-0">
-               <Link href={`/journal/${nextArticle.slug}`} className="group block w-full relative overflow-hidden bg-black aspect-video md:aspect-[21/9] border border-brand-border/50">
-                  <Image 
-                    src={getAssetPath(nextArticle.coverImage || "/images/featured-article.png")}
-                    alt=""
-                    fill
-                    className="object-cover opacity-50 group-hover:scale-105 group-hover:opacity-70 transition-all duration-700 grayscale"
-                  />
-                  <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-12">
-                    <span className="font-mono text-[10px] text-brand-accent-red uppercase tracking-[0.4em] mb-3 font-bold">Lire la suite</span>
-                    <h4 className="font-display font-black text-xl md:text-[26px] uppercase text-white leading-none tracking-tighter group-hover:text-brand-accent-red transition-colors">
-                      {nextArticle.title}
-                    </h4>
-                  </div>
-               </Link>
-            </div>
-          )}
         </div>
-      </div>
+      )}
     </>
   );
 }

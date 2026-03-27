@@ -7,6 +7,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Journal | Reflexe.io",
   description: "Tous les articles : biais cognitifs, manipulation et décryptage des mécanismes d'influence.",
+  alternates: {
+    canonical: "https://mist3rth.github.io/Reflex.io/journal/",
+  },
 };
 
 export default function JournalPage() {
