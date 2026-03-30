@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function JournalPage() {
   const articles = getAllArticles().filter(
-    (a: Article) => a.status === "published" && a.slug !== "fabriquer-le-reflexe-histoire-manipulation-cognitive" && a.slug !== "biais-cognitifs"
+    (a: Article) => a.status === "published" && a.slug !== "biais-cognitifs"
   );
 
   return (
