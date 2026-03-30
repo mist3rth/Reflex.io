@@ -5,7 +5,7 @@ import { Article } from "@/lib/types";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Journal | Reflexe.io",
+  title: "Journal des Mécanismes d'Influence et Biais Cognitifs | Reflexe.io",
   description: "Tous les articles : biais cognitifs, manipulation et décryptage des mécanismes d'influence.",
   alternates: {
     canonical: "https://mist3rth.github.io/Reflex.io/journal/",

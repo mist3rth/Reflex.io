@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getAssetPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "À propos | Reflexe.io",
+  title: "Expertise en Prospective et Architecture de la Pensée | Thierry Thiesson",
   description: "La voix derrière Reflexe.io : Thierry Thiesson. 30 ans d'expertise dans le digital et les architectures de la pensée.",
   openGraph: {
     title: "Thierry Thiesson | À propos de Reflexe.io",

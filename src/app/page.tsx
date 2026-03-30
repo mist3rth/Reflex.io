@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllArticles } from "@/lib/articles";
 import DataLog from "@/components/home/DataLog";
-import { getAssetPath } from "@/lib/utils";
+import { getAssetPath } from "@/lib/utils"; // Refresh trigger - Skinner Box Featured
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
