@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { ReadingProgress } from "@/components/layout/ReadingProgress";
-import { Callout, Highlight, Quote, Heading2, Heading3 } from "@/components/article/MdxComponents";
+import { Callout, Highlight, Quote, Heading2, Heading3, CustomLink } from "@/components/article/MdxComponents";
 import { getArticleBySlug, getPossibleSlugs, getNextArticle } from "@/lib/articles";
 import { getArticleJsonLd, getBreadcrumbJsonLd } from "@/lib/jsonld";
 import { getAssetPath } from "@/lib/utils";
@@ -64,7 +64,8 @@ const components = {
   Highlight, 
   Quote,
   h2: Heading2,
-  h3: Heading3
+  h3: Heading3,
+  a: CustomLink
 };
 
 export default async function ArticlePage({

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import { Info, AlertTriangle, BookOpen, Quote as QuoteIcon } from "lucide-react";
+import { Info, AlertTriangle, BookOpen, Quote as QuoteIcon, ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 type CalloutType = "insight" | "warning" | "research";
 
@@ -89,5 +90,34 @@ export function Heading3({ children, id }: { children: ReactNode; id?: string })
     <h3 id={id} className="scroll-mt-[120px] font-display font-black text-xl md:text-2xl uppercase text-brand-accent-red mt-12 mb-6 tracking-wide">
       {children}
     </h3>
+  );
+}
+
+export function CustomLink({ href, children, ...props }: { href?: string; children: ReactNode }) {
+  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
+
+  if (isInternalLink) {
+    return (
+      <Link 
+        href={href} 
+        className="text-brand-text-primary font-bold underline decoration-brand-accent-red/30 hover:decoration-brand-accent-red transition-all underline-offset-4"
+        {...props}
+      >
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-1 text-brand-accent-red hover:underline underline-offset-4 decoration-2"
+      {...props}
+    >
+      {children}
+      <ExternalLink className="w-3 h-3 opacity-50" />
+    </a>
   );
 }
