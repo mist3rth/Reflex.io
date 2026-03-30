@@ -10,8 +10,9 @@
 - [x] Page À propos
 - [x] Fonts auto-hébergées
 - [x] Métadonnées SEO + JSON-LD
-- [ ] Déploiement Vercel + domaine reflexe.io
-- [ ] Lighthouse ≥ 95 sur toutes les pages
+- [x] Déploiement GitHub Pages (Reflex.io)
+- [x] Lighthouse ≥ 95 (Audit local validé)
+- [x] Navigation MDX (CustomLink + NextLink) <!-- id: 8 -->
 
 ## Phase 2 — Enrichissement éditorial
 - [x] Composants MDX custom (Callout, Highlight, Quote)<!-- id: 1 -->
@@ -26,11 +27,14 @@
 - [x] Optimisation SEO & Open Graph (OG) complète
 - [x] Audit A11Y complet
 - [x] Génération de l'iconographie premium (100% articles)<!-- id: 7 -->
+- [x] Harmonisation éditoriale (Footers, Recommendations, Auteur) #DONE
 
-## Phase 3 — Audience & distribution
-- [ ] Newsletter (Buttondown ou Resend)
-- [ ] Analytics privacy-friendly
-- [ ] Images Open Graph dynamiques
+## Phase 3 — Évolutions critiques & UX
+- [ ] Recherche full-text côté client (fuse.js) <!-- PRIORITÉ -->
+- [ ] Optimisation images automatique (Next/Image loader)
+- [ ] RSS Feed (.xml)
+- [ ] Analytics privacy-friendly (Tinybird ou Plausible)
+- [ ] Images Open Graph dynamiques (satori)
 
 ## Phase 4 — Évolutions long terme
 - [ ] RSS Feed
