@@ -16,6 +16,7 @@
 
 ## Phase 2 — Enrichissement éditorial
 - [x] Composants MDX custom (Callout, Highlight, Quote)<!-- id: 1 -->
+- [x] Article 017 : Chaos mondial & GAFAM (Terrain) #DONE
 - [ ] Système de tags et navigation par tags
 - [x] Page article : navigation précédent/suivant (Article Suivant)<!-- id: 3 -->
 - [ ] Recherche full-text côté client (fuse.js)
